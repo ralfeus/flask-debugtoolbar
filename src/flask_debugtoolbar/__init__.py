@@ -7,10 +7,7 @@ from packaging import version as version_builder
 from flask import Blueprint, current_app, request, g, send_from_directory, url_for
 
 
-if version_builder.parse(flask.__version__) >= version_builder.parse("2.2.0"):
-    from flask.globals import request_ctx
-else:
-    from flask.globals import _request_ctx_stack
+from flask.globals import request_ctx
 
 
 from jinja2 import __version__ as __jinja_version__
